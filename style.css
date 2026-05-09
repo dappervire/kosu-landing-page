@@ -1,27 +1,88 @@
-html{
+:root {
+    /* Backgrounds */
+    --bg-primary: #f5f0e8;
+    --bg-secondary: #ede4d3;
+    --bg-card: #fdfaf5;
+    --bg-elevated: #fff;
+    
+    /* Text */
+    --text-primary: #2a1810;
+    --text-secondary: #555;
+    --text-muted: #444;
+    
+    /* Accents */
+    --accent: #8b4513;
+    
+    /* UI */
+    --border: #e0e0e0;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.1);
+    
+    /* Footer */
+    --footer-bg: #2a1810;
+    --footer-text: #f5f0e8;
+}
+
+body.dark nav img {
+    filter: invert(1) brightness(0.9);
+}
+
+body.dark {
+    /* Backgrounds */
+    --bg-primary: #1a1410;
+    --bg-secondary: #2a1f18;
+    --bg-card: #3a2d22;
+    --bg-elevated: #1f1812;
+    
+    /* Text */
+    --text-primary: #f5f0e8;
+    --text-secondary: #b5a89a;
+    --text-muted: #c5b8aa;
+    
+    /* Accents */
+    --accent: #d4a574;
+    
+    /* UI */
+    --border: #3a2f25;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.4);
+    
+    /* Footer (tetep dark, sama-sama nyatu) */
+    --footer-bg: #0f0a06;
+    --footer-text: #f5f0e8;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
-img{
+body {
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+img {
     max-width: 100%;
     height: auto;
 }
 
-header{
+header {
     position: sticky;
     top: 0;
-    background-color: #fff;
-    box-shadow: 0 2px, 8px rgba(0, 0, 0, 0.05);
+    background-color: var(--bg-elevated);
+    box-shadow: var(--shadow-sm);
     z-index: 100;
-    padding: 12px 40px;
+    padding: 8px 40px;
+    transition: background-color 0.3s ease;
 }
 
-nav img{
+nav img {
     height: 70px;
     width: auto;
 }
 
-#hero img{
+#hero img {
     max-height: 400px;
     width: auto;
 }
@@ -29,34 +90,40 @@ nav img{
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: flex-start;
+    gap: 40px;
+    position: relative;
 }
 
-nav ul{
+nav ul {
     display: flex;
     gap: 20px;
     list-style: none;
 }
 
-nav a{
+nav a {
     text-decoration: none;
-    color: #2a1810;
+    color: var(--text-primary);
     font-weight: 500;
     transition: 0.3s ease;
 }
 
-nav a:hover{
-    color: #8b4513
+nav a:hover {
+    color: var(--accent);
 }
 
-#hero{
+#theme-toggle {
+    margin-left: auto;
+}
+
+#hero {
     text-align: center;
     padding: 60px 20px;
-    background-color: #f5f0e8;
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease;
 }
 
-#hero h1{
+#hero h1 {
     font-size: 48px;
     margin-bottom: 16px;
     max-width: 800px;
@@ -64,24 +131,25 @@ nav a:hover{
     margin-right: auto;
 }
 
-#hero p{
+#hero p {
     font-size: 18px;
     margin-bottom: 32px;
-    color: #555;
+    color: var(--text-secondary);
 }
 
-#varian{
+#varian {
     padding: 60px 20px;
     text-align: center;
-    background-color: #ede4d3
+    background-color: var(--bg-secondary);
+    transition: background-color 0.3s ease;
 }
 
-#varian h2{
+#varian h2 {
     font-size: 36px;
     margin-bottom: 40px;
 }
 
-#varian ul{
+#varian ul {
     display: flex;
     gap: 24px;
     list-style: none;
@@ -89,68 +157,70 @@ nav a:hover{
     padding: 0;
 }
 
-#varian li{
+#varian li {
     flex: 1;
     max-width: 280px;
     padding: 20px;
-    background-color: #fdfaf5;
-    border: 1px solid #e0e0e0;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
-#varian li:hover{
+#varian li:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1)
+    box-shadow: var(--shadow-md);
 }
 
-#varian li img{
+#varian li img {
     width: 100%;
     height: 200px;
     object-fit: contain;
     margin-bottom: 16px;
 }
 
-#varian li h3{
+#varian li h3 {
     font-size: 18px;
     margin-bottom: 8px;
 }
 
-#varian li p{
+#varian li p {
     font-size: 14px;
-    color: #555;
+    color: var(--text-secondary);
 }
 
-#tentang{
+#tentang {
     padding: 60px 20px;
     text-align: center;
-    background-color: #f5f0e8;
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease;
 }
 
-#tentang h2{
+#tentang h2 {
     font-size: 36px;
     margin-bottom: 24px;
 }
 
-#tentang p{
+#tentang p {
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.7;
-    color: #444;
+    color: var(--text-muted);
 }
 
-#beli{
+#beli {
     padding: 60px 20px;
     text-align: center;
-    background-color: #ede4d3;
+    background-color: var(--bg-secondary);
+    transition: background-color 0.3s ease;
 }
 
-#beli h2{
+#beli h2 {
     font-size: 36px;
     margin-bottom: 32px;
 }
 
-#beli ul{
+#beli ul {
     display: flex;
     list-style: none;
     gap: 32px;
@@ -159,23 +229,73 @@ nav a:hover{
     flex-wrap: wrap;
 }
 
-#beli li{
+#beli li {
     font-size: 18px;
     font-weight: 600;
-    color: #555;
+    color: var(--text-secondary);
     padding: 12px 24px;
-    background-color: #fff;
+    background-color: var(--bg-elevated);
     border-radius: 10px;
 }
 
-footer{
-    padding: 40px 20px;
-    background-color: #2a1810;
-    color: #f5f0e8;
+#faq {
+    padding: 60px 20px;
+    background-color: var(--bg-secondary);
     text-align: center;
 }
 
-footer ul{
+.faq-item {
+    max-width: 700px;
+    margin: 0 auto 12px;
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 16px 20px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-icon {
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px 16px;
+    color: var(--text-secondary);
+    text-align: left;
+    margin: 0;
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+footer {
+    padding: 40px 20px;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3 ease;
+}
+
+footer ul {
     display: flex;
     gap: 24px;
     list-style: none;
@@ -183,55 +303,110 @@ footer ul{
     padding: 0;
     margin-top: 16px;
 }
-footer a{
-    color: #f5f0e8;
+
+footer a {
+    color: var(--footer-text);
     text-decoration: none;
 }
 
-section{
+section {
     scroll-margin-top: 80px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-@media (max-width: 768px){
-    #hero h1{
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+nav.menu-open ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-primary);
+    padding: 20px;
+    gap: 16px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    #hero h1 {
         font-size: 32px;
     }
 
-    #hero p{
+    #hero p {
         font-size: 16px;
     }
 
-    #varian ul{
+    #varian ul {
         flex-direction: column;
         align-items: center;
     }
 
-    #varian li{
+    #varian li {
         max-width: 100%;
         width: 100%;
     }
 
-    h2{
+    h2 {
         font-size: 28px;
     }
 
-    header{
+    header {
         padding: 12px 20px;
     }
 
-    nav{
+    nav {
         gap: 12px;
     }
 
-    nav ul{
+    nav ul {
         gap: 12px;
+        display: none;
     }
 
-    nav img{
+    #hamburger {
+    display: block;
+    margin-left: auto;
+    }
+
+    #theme-toggle {
+        margin-left: 0;
+    }
+
+    nav img {
         height: 45px;
     }
 
-    #beli li{
+    nav.menu-open ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-primary);
+    padding: 20px;
+    gap: 16px;
+    margin: 0;
+    list-style: none;
+}
+
+    #beli li {
         width: auto;
         padding: 10px 18px;
         font-size: 16px;
