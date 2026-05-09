@@ -123,17 +123,6 @@ Cukup buka file `index.html` langsung di browser favorit kamu.
 
 ---
 
-## 📱 Connect with Us
-
-<div align="center">
-
-[![Instagram](https://img.shields.io/badge/Instagram-@unguentuum-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/unguentuum)
-[![TikTok](https://img.shields.io/badge/TikTok-@dappervire-000000?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@dappervire)
-
-</div>
-
----
-
 ## 📜 Lisensi
 
 ```
